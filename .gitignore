@@ -1,0 +1,32 @@
+# Python-related files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-related files
+.idea/
+.vscode/
+
+# Logs & Cache
+*.log
+.cache/
+*.sqlite3
+
+# Static & media files
+api/static/audio/
+frontend/__pycache__/
+
+# Environment variables
+.env
+
+# Hugging Face cache
+/root/.cache/huggingface/

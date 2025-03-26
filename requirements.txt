@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+streamlit
+requests
+beautifulsoup4
+transformers
+torch
+deep-translator
+gtts
+pydantic
+python-multipart
