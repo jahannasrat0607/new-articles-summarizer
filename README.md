@@ -29,7 +29,7 @@ Extracts, summarizes, and analyzes news articles for a company with sentiment an
 ## API
 GET /fetch_news?company=<name>
 ```json
-{"Company": "Tesla", "Articles": [{"Title": "Tesla Surge", "Summary": "Stock rose...", "Sentiment": "Positive", "Topics": ["Market"], "Audio": "<url>", "Link": "<url>"}], "ComparativeAnalysis": "Positive trend"}
+{"Company": "Tesla", "Articles": [{"Title": "Tesla Surge", "Summary": "Stock rose...", "Sentiment": "Positive", "Topics": ["Market"], "Audio": "<url>", "Link": "<url>"}], "ComparativeAnalysis": "Positive trend"}```
 
 3. The application should be live on Hugging Face Spaces.
 
