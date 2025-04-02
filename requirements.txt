@@ -9,3 +9,4 @@ deep-translator
 gtts
 pydantic
 python-multipart
+hf_xet  # Added for Xet Storage optimization
