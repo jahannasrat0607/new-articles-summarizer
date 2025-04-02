@@ -27,7 +27,7 @@ Extracts, summarizes, and analyzes news articles for a company with sentiment an
 4. Run Streamlit: `streamlit run app.py --server.port 8501 --server.address 0.0.0.0`
 
 ## API
-**GET /fetch_news?company=<name>**
+GET /fetch_news?company=<name>
 ```json
 {"Company": "Tesla", "Articles": [{"Title": "Tesla Surge", "Summary": "Stock rose...", "Sentiment": "Positive", "Topics": ["Market"], "Audio": "<url>", "Link": "<url>"}], "ComparativeAnalysis": "Positive trend"}
 
