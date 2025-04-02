@@ -22,22 +22,6 @@ This application extracts, summarizes, and analyzes news articles related to a g
 - Backend API using FastAPI.
 - Deployable on Hugging Face Spaces.
 
-## Project Structure
-```
-news-article-summarizer/
-│── api/
-│   ├── main.py  # FastAPI backend
-│   ├── static/
-│   │   ├── audio/  # Stores generated audio files
-│── frontend/
-│   ├── app.py  # Streamlit frontend
-│── utils/
-│   ├── news_utils.py  # Helper functions
-│── Dockerfile
-│── requirements.txt
-│── README.md
-```
-
 ## Installation
 ### Prerequisites
 - Python 3.9+
