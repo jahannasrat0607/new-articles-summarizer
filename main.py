@@ -184,26 +184,13 @@ def extract_topics(text):
 
 
 def text_to_speech(text, filename):
-    """Converts text to Hindi speech and saves as MP3"""
-    if not text or text.startswith("⚠️"):
-        return None
-
-    try:
-        # Clean filename to remove invalid characters
-        safe_filename = "".join(c for c in filename if c.isalnum() or c in ('_', '-', '.'))
-        output_path = audio_dir / safe_filename
-
-        # Skip if file already exists
-        if output_path.exists():
-            return f"/static/audio/{safe_filename}"
-
-        tts = gTTS(text=text[:5000], lang='hi', slow=False)  # Limit text length
-        tts.save(output_path)
+    safe_filename = "".join(c for c in filename if c.isalnum() or c in ('_', '-', '.'))
+    output_path = audio_dir / safe_filename
+    if output_path.exists():
         return f"/static/audio/{safe_filename}"
-    except Exception as e:
-        logger.error(f"Text-to-speech failed: {e}")
-        return None
-
+    tts = gTTS(text=text[:5000], lang='hi', slow=False)
+    tts.save(output_path)
+    return f"/static/audio/{safe_filename}"
 
 def generate_final_output(news_articles, company_name):
     """Generates the final output in the specified JSON format"""
@@ -233,7 +220,7 @@ def generate_final_output(news_articles, company_name):
                 "Summary_Hindi": summary_hindi,
                 "Sentiment": sentiment,
                 "Topics": topics,
-                "Audio": f"http://127.0.0.1:8000{audio_path}" if audio_path else None,
+                "Audio": audio_path,
                 "Link": article.get("link", "")
             })
 
@@ -246,6 +233,7 @@ def generate_final_output(news_articles, company_name):
         "Articles": articles_output,
         "Count": len(articles_output)
     }
+
 
 @app.get("/")
 def read_root():
@@ -267,5 +255,5 @@ def get_news(company: str):
 
 # if __name__ == "__main__":
 #     uvicorn.run(app, host="0.0.0.0", port=8000)
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=7860)  #port required for Hugging Face
+# if __name__ == "__main__":
+#     uvicorn.run(app, host="0.0.0.0", port=7860)  #port required for Hugging Face
