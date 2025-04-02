@@ -183,7 +183,18 @@ def extract_topics(text):
     return topics if topics else ["General"]
 
 
+# def text_to_speech(text, filename):
+#     safe_filename = "".join(c for c in filename if c.isalnum() or c in ('_', '-', '.'))
+#     output_path = audio_dir / safe_filename
+#     if output_path.exists():
+#         return f"/static/audio/{safe_filename}"
+#     tts = gTTS(text=text[:5000], lang='hi', slow=False)
+#     tts.save(output_path)
+#     return f"/static/audio/{safe_filename}"
+
 def text_to_speech(text, filename):
+    if not text or text.startswith("⚠️"):
+        return None
     safe_filename = "".join(c for c in filename if c.isalnum() or c in ('_', '-', '.'))
     output_path = audio_dir / safe_filename
     if output_path.exists():
