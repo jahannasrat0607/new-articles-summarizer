@@ -1,12 +1,3 @@
----
-title: News Articles Summarizer
-emoji: 📰
-colorFrom: blue
-colorTo: green
-sdk: docker
-app_file: Dockerfile
-pinned: false
----
 
 # News Articles Summarizer
 
